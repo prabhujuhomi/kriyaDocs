@@ -12,8 +12,8 @@ import ReferenceIcon from "./icons/bookmark.png";
 import ChatIcon from "./icons/chat.png";
 import IconButton from "./IconButton";
 // import { storiesOf } from "@storybook/react";
-import { within, userEvent } from '@storybook/testing-library'
-import { expect } from '@storybook/jest'
+import { within, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 export default {
   title: "components/IconButton",
@@ -36,9 +36,14 @@ const Template = (args) => {
       <IconButton backgroundColor="white">
         <img src={ImgIcon} alt="imageIcon not found" />
       </IconButton>
-      <IconButton backgroundColor="white">
+      {/* <IconButton backgroundColor="white">
         <img src={ReferenceIcon} alt="imageIcon not found" />
-      </IconButton>
+      </IconButton> */}
+      <IconButton
+        backgroundColor="white"
+        src={ReferenceIcon}
+        alt="imageIcon not found"
+      />
       <IconButton backgroundColor="white">
         <img src={EquationIcon} alt="EquationIcon not found" />
       </IconButton>
@@ -69,12 +74,12 @@ const Template = (args) => {
 export const IconButtons = Template.bind({});
 IconButtons.args = {};
 
-const TemplateTest = (args) => <IconButton {...args}/>;
+const TemplateTest = (args) => <IconButton {...args} />;
 export const iconButton = TemplateTest.bind({});
 iconButton.args = {};
 
 iconButton.play = async ({ canvasElement, args }) => {
-  console.log({ canvasElement, args })
-  const canvas = within(canvasElement)
-  await userEvent.click(canvas.getByTestId('add-icon'))
-}
+  console.log({ canvasElement, args });
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByTestId("add-icon"));
+};

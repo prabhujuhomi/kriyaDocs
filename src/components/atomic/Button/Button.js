@@ -79,6 +79,7 @@ Button.defaultProps = {
   children: "Submit",
   variantType: "contained",
   size: "medium",
+  onClick: undefined,
 };
 
 Button.propTypes = {
@@ -110,6 +111,7 @@ Button.propTypes = {
    * How large should the button be
    */
   size: PropTypes.oneOf(["small", "medium", "large"]),
+  onClick: PropTypes.func,
 };
 
 export default Button;

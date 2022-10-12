@@ -2,7 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 import MUIIconButton from "@mui/material/IconButton";
 
-const IconButton = ({ children, backgroundColor, color, size, marginLeft, dataTestId, onClick }) => {
+const IconButton = ({
+  children,
+  backgroundColor,
+  color,
+  size,
+  marginLeft,
+  dataTestId,
+  onClick,
+  src,
+  alt,
+}) => {
+  let content;
+  if (children) {
+    content = children;
+  } else {
+    content = <img src={src} alt={alt} />;
+  }
   return (
     <MUIIconButton
       sx={{
@@ -20,7 +36,8 @@ const IconButton = ({ children, backgroundColor, color, size, marginLeft, dataTe
       data-testid={dataTestId}
       onClick={onClick}
     >
-      {children}
+      {/* {children} */}
+      {content}
     </MUIIconButton>
   );
 };
@@ -48,6 +65,8 @@ IconButton.propTypes = {
   marginLeft: PropTypes.string,
   dataTestId: PropTypes.string,
   onClick: PropTypes.func,
+  src: PropTypes.string,
+  alt: PropTypes.string,
 };
 
 IconButton.defaultProps = {
