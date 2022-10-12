@@ -30,7 +30,7 @@ const Button = ({
               transition: "0.3s",
               opacity: "0.9",
               borderWidth: "2px",
-              backgroundColor: "#6801d6",
+              backgroundColor: "lightgrey",
             },
           },
         },
@@ -114,7 +114,7 @@ Button.propTypes = {
    */
   size: PropTypes.oneOf(["small", "medium", "large"]),
   onClick: PropTypes.func,
-  dataTestId: PropTypes.string
+  dataTestId: PropTypes.string,
 };
 
 export default Button;
