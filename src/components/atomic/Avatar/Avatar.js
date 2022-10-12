@@ -12,7 +12,6 @@ const Avatar = ({
   backgroundColor,
   color,
 }) => {
-  console.log("src", size);
   return (
     <MUIAvatar
       sx={{
