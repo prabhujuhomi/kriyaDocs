@@ -20,7 +20,7 @@ const Button = ({
       MuiButton: {
         styleOverrides: {
           contained: {
-            backgroundColor: backgroundColor ? backgroundColor : "#6801d6",
+            backgroundColor: "red",
             color: color ? color : "white",
             borderRadius: radius ? radius : "10px",
             textTransform: "none",
@@ -30,7 +30,7 @@ const Button = ({
               transition: "0.3s",
               opacity: "0.9",
               borderWidth: "2px",
-              backgroundColor: "lightgrey",
+              backgroundColor: "#6801d6",
             },
           },
         },
