@@ -12,6 +12,7 @@ const IconButton = ({
   onClick,
   src,
   alt,
+  ...props
 }) => {
   let content;
   if (children) {
@@ -35,6 +36,7 @@ const IconButton = ({
       size={size}
       data-testid={dataTestId}
       onClick={onClick}
+      {...props}
     >
       {/* {children} */}
       {content}
