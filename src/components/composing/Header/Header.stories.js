@@ -13,7 +13,6 @@ export const header = Template.bind({});
 header.args = {};
 
 header.play = async ({ canvasElement, args }) => {
-  console.log({ canvasElement, args })
   const canvas = within(canvasElement)
   await userEvent.click(canvas.getByTestId('add-icon'))
 }

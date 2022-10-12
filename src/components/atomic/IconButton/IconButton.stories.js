@@ -12,6 +12,8 @@ import ReferenceIcon from "./icons/bookmark.png";
 import ChatIcon from "./icons/chat.png";
 import IconButton from "./IconButton";
 // import { storiesOf } from "@storybook/react";
+import { within, userEvent } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 export default {
   title: "components/IconButton",
@@ -66,3 +68,13 @@ const Template = (args) => {
 };
 export const IconButtons = Template.bind({});
 IconButtons.args = {};
+
+const TemplateTest = (args) => <IconButton {...args}/>;
+export const iconButton = TemplateTest.bind({});
+iconButton.args = {};
+
+iconButton.play = async ({ canvasElement, args }) => {
+  console.log({ canvasElement, args })
+  const canvas = within(canvasElement)
+  await userEvent.click(canvas.getByTestId('add-icon'))
+}
