@@ -55,5 +55,6 @@ IconButton.defaultProps = {
   color: "white",
   size: "medium",
   marginLeft: "0px",
+  onClick: undefined,
 };
 export default IconButton;

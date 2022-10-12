@@ -69,12 +69,13 @@ const Template = (args) => {
 export const IconButtons = Template.bind({});
 IconButtons.args = {};
 
-const TemplateTest = (args) => <IconButton {...args}/>;
+const TemplateTest = (args) => {return <IconButton dataTestId={'test-icon'} onClick={() => {alert('clicked')}}/>};
 export const iconButton = TemplateTest.bind({});
 iconButton.args = {};
 
 iconButton.play = async ({ canvasElement, args }) => {
   console.log({ canvasElement, args })
   const canvas = within(canvasElement)
-  await userEvent.click(canvas.getByTestId('add-icon'))
+  await userEvent.click(canvas.getByTestId('test-icon'))
+  await expect(args.onClick).not.toHaveBeenCalled()
 }
