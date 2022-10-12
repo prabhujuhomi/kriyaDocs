@@ -18,11 +18,12 @@ export const Filled = Template.bind({});
 Filled.args = {
   radius: "20px",
   children: "Submit",
+  dataTestId: "button-test"
 };
 Filled.play = async ({ canvasElement, args }) => {
   const canvas = within(canvasElement);
   await userEvent.click(canvas.getByTestId("button-test"));
-  await expect(args.onClick).not.toHaveBeenCalled();
+  await expect(args.onClick).toHaveBeenCalled();
 };
 
 export const Outlined = Template.bind({});
@@ -30,11 +31,12 @@ Outlined.args = {
   radius: "20px",
   variantType: "outlined",
   children: "Cancel",
+  dataTestId: "button-test"
 };
 Outlined.play = async ({ canvasElement, args }) => {
   const canvas = within(canvasElement);
   await userEvent.click(canvas.getByTestId("button-test"));
-  await expect(args.onClick).not.toHaveBeenCalled();
+  await expect(args.onClick).toHaveBeenCalled();
 };
 
 export const IconButtonWithLabel = Template.bind({});
@@ -44,9 +46,10 @@ IconButtonWithLabel.args = {
   startIcon: <AddIcon />,
   children: "Add",
   size: "small",
+  dataTestId: "button-test"
 };
 IconButtonWithLabel.play = async ({ canvasElement, args }) => {
   const canvas = within(canvasElement);
   await userEvent.click(canvas.getByTestId("button-test"));
-  await expect(args.onClick).not.toHaveBeenCalled();
+  await expect(args.onClick).toHaveBeenCalled();
 };

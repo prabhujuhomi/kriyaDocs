@@ -12,6 +12,7 @@ const Button = ({
   radius,
   size,
   borderColor,
+  dataTestId,
   ...props
 }) => {
   const containedTheme = createTheme({
@@ -21,7 +22,7 @@ const Button = ({
           contained: {
             backgroundColor: backgroundColor ? backgroundColor : "#6801d6",
             color: color ? color : "white",
-            borderRadius: radius ? radius : "0px",
+            borderRadius: radius ? radius : "10px",
             textTransform: "none",
           },
           root: {
@@ -68,6 +69,7 @@ const Button = ({
       // className={classes.root}
       variant={variantType}
       size={size}
+      data-testid={dataTestId}
       {...props}
     >
       {children}
@@ -112,6 +114,7 @@ Button.propTypes = {
    */
   size: PropTypes.oneOf(["small", "medium", "large"]),
   onClick: PropTypes.func,
+  dataTestId: PropTypes.string
 };
 
 export default Button;
