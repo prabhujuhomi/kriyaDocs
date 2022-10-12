@@ -20,7 +20,7 @@ const Button = ({
       MuiButton: {
         styleOverrides: {
           contained: {
-            backgroundColor: backgroundColor ? backgroundColor : "#6801d6",
+            backgroundColor: "red",
             color: color ? color : "white",
             borderRadius: radius ? radius : "10px",
             textTransform: "none",
@@ -114,7 +114,7 @@ Button.propTypes = {
    */
   size: PropTypes.oneOf(["small", "medium", "large"]),
   onClick: PropTypes.func,
-  dataTestId: PropTypes.string
+  dataTestId: PropTypes.string,
 };
 
 export default Button;
