@@ -39,7 +39,7 @@ const Header = () => {
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, mt: 0, my: 0 }}>
               <img src={KdoxLogo} alt="kodox logo not found" style={{marginRight: '15px'}}/>
               <Stack direction="row">
-                <IconButton>
+                <IconButton dataTestId="add-icon" onClick={() => {alert('clicked')}}>
                   <AddIcon />
                 </IconButton>
                 <IconButton backgroundColor="white" marginLeft='15px'>

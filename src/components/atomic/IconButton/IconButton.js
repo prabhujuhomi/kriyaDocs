@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import MUIIconButton from "@mui/material/IconButton";
 
-const IconButton = ({ children, backgroundColor, color, size, marginLeft }) => {
+const IconButton = ({ children, backgroundColor, color, size, marginLeft, dataTestId, onClick }) => {
   return (
     <MUIIconButton
       sx={{
@@ -17,6 +17,8 @@ const IconButton = ({ children, backgroundColor, color, size, marginLeft }) => {
         },
       }}
       size={size}
+      data-testid={dataTestId}
+      onClick={onClick}
     >
       {children}
     </MUIIconButton>
@@ -44,6 +46,8 @@ IconButton.propTypes = {
    * How much space need between left margin and element
    */
   marginLeft: PropTypes.string,
+  dataTestId: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 IconButton.defaultProps = {
