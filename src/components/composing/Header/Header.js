@@ -1,6 +1,10 @@
 import React from "react";
-import Box from "@mui/material/Box";
+// import Typography from "@mui/material/Typography";
+
 import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
 import Toolbar from "@mui/material/Toolbar";
 import Divider from "@mui/material/Divider";
 import AddIcon from "@mui/icons-material/Add";
@@ -24,117 +28,112 @@ import KdoxLogo from "./images/kdox.png";
 
 const Header = () => {
   return (
-    <Box>
       <AppBar sx={{ bgcolor: "white" }} position="static">
-        <Toolbar disableGutters>
-          <img src={KdoxLogo} alt="kodox logo not found" />
-          <IconButton size="medium">
-            <AddIcon />
-          </IconButton>
-          <IconButton backgroundColor="white" marginLeft="5px">
-            <img
-              src={ImgIcon}
-              alt="imageIcon not found"
-              width="20px"
-              height="20px"
-            />
-          </IconButton>
-          <IconButton backgroundColor="white">
-            <img
-              src={ReferenceIcon}
-              alt="ReferenceIcon not found"
-              width="20px"
-              height="20px"
-            />
-          </IconButton>
-          <IconButton backgroundColor="white">
-            <img
-              src={EquationIcon}
-              alt="EquationIcon not found"
-              width="20px"
-              height="20px"
-            />
-          </IconButton>
-          <IconButton backgroundColor="white">
-            <img
-              src={SymbolIcon}
-              alt="SymbolIcon not found"
-              width="25x"
-              height="25px"
-            />
-          </IconButton>
-          <IconButton backgroundColor="white">
-            <img
-              src={ChatIcon}
-              alt="ChatIcon not found"
-              width="20x"
-              height="20px"
-            />
-          </IconButton>
-          <Divider
-            orientation="vertical"
-            flexItem
-            sx={{ marginLeft: "25px" }}
-          />
-          <IconButton backgroundColor="white" color="#898585" marginLeft="25px">
-            {/* <UndoIcon /> */}
-            <img
-              src={UndoIcon}
-              alt="UndoIcon not found"
-              width="25px"
-              height="25px"
-            />
-          </IconButton>
-          <IconButton backgroundColor="white" color="#898585">
-            {/* <RedoIcon /> */}
-            <img
-              src={RedoIcon}
-              alt="RedoIcon not found"
-              width="25x"
-              height="25px"
-            />
-          </IconButton>
-          <Avatar size="32px" fontSize="12px" marginLeft="350px">
-            MP
-          </Avatar>
-          <Avatar src={person} alt="John" size="32px" />
-          <Avatar src={person} alt="John" size="32px" />
-          <IconButton backgroundColor="white" marginLeft="10px">
-            <img
-              src={GroupIcon}
-              alt="GroupIcon not found"
-              width="20x"
-              height="20px"
-            />
-          </IconButton>
-          <IconButton backgroundColor="white">
-            <img
-              src={ActionIcon}
-              alt="ActionIcon not found"
-              width="20x"
-              height="20px"
-            />
-          </IconButton>
-          <Button radius="20px" size="large">
-            Submit
-          </Button>
-          <Divider
-            orientation="vertical"
-            flexItem
-            sx={{ marginLeft: "12px" }}
-          />
-          <IconButton backgroundColor="white" marginLeft="12px">
-            <img
-              src={NotificationIcon}
-              alt="NotificationIcon not found"
-              width="20x"
-              height="20px"
-            />
-          </IconButton>
-          <Avatar src={person} alt="John" size="32px" />
-        </Toolbar>
+        <Container maxWidth="xl" sx={{mt: 0, my: 0}}>
+          <Toolbar disableGutters>
+            {/* <Typography
+              sx={{ color: "black", paddingLeft: "10px", paddingRight: "10px" }}
+            >
+              kDox
+            </Typography> */}
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, mt: 0, my: 0 }}>
+              <img src={KdoxLogo} alt="kodox logo not found" style={{marginRight: '15px'}}/>
+              <Stack direction="row">
+                <IconButton>
+                  <AddIcon />
+                </IconButton>
+                <IconButton backgroundColor="white" marginLeft='15px'>
+                  <img
+                    src={ImgIcon}
+                    alt="imageIcon not found"
+                  />
+                </IconButton>
+                <IconButton backgroundColor="white">
+                  <img
+                    src={ReferenceIcon}
+                    alt="ReferenceIcon not found"
+                  />
+                </IconButton>
+                <IconButton backgroundColor="white">
+                  <img
+                    src={EquationIcon}
+                    alt="EquationIcon not found"
+                  />
+                </IconButton>
+                <IconButton backgroundColor="white">
+                  <img
+                    src={SymbolIcon}
+                    alt="SymbolIcon not found"
+                  />
+                </IconButton>
+                <IconButton backgroundColor="white">
+                  <img
+                    src={ChatIcon}
+                    alt="ChatIcon not found"
+                  />
+                </IconButton>
+              </Stack>
+              <Divider
+                orientation="vertical"
+                flexItem
+                sx={{mr:"20px", ml:"20px"}}
+              />
+              <Stack direction="row">
+                <IconButton backgroundColor="white" color="#898585">
+                  {/* <UndoIcon /> */}
+                  <img
+                    src={UndoIcon}
+                    alt="UndoIcon not found"
+                  />
+                </IconButton>
+                <IconButton backgroundColor="white" color="#898585">
+                  {/* <RedoIcon /> */}
+                  <img
+                    src={RedoIcon}
+                    alt="RedoIcon not found"
+                  />
+                </IconButton>
+              </Stack>
+            </Box>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, justifyContent: "flex-end", mt: 0, mb: 0 }}>
+            <Stack direction="row">
+                <Avatar size="33px" fontSize="12px">
+                  MP
+                </Avatar>
+                <Avatar src={person} alt="John" size="32px" />
+                <Avatar src={person} alt="John" size="32px" />
+                <IconButton backgroundColor="white" >
+                  <img
+                    src={GroupIcon}
+                    alt="GroupIcon not found"
+                  />
+                </IconButton>
+                <IconButton backgroundColor="white">
+                  <img
+                    src={ActionIcon}
+                    alt="ActionIcon not found"
+                  />
+                </IconButton>
+              </Stack>
+              <Button radius="20px">
+                Submit
+              </Button>
+              <Divider
+                orientation="vertical"
+                flexItem
+                sx={{mr: '12px', ml: '20px' }}
+              />
+              <IconButton backgroundColor="white">
+                <img
+                  src={NotificationIcon}
+                  alt="NotificationIcon not found"
+                />
+              </IconButton>
+              <Avatar src={person} alt="John" size="32px" />
+            </Box>
+          </Toolbar>
+        </Container>
       </AppBar>
-    </Box>
   );
 };
 
