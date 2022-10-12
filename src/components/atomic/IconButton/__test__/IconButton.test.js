@@ -15,7 +15,7 @@ describe("IconButton component tests", () => {
     expect(rendered).toBeTruthy();
     expect(rendered).toHaveClass("MuiButtonBase-root");
     expect(rendered).toContainHTML("svg");
-    const child = screen.getByRole("button").firstElementChild;
+    const child = screen.getByRole("button").firstChild;
     expect(child).toHaveAttribute("data-testid", "AddIcon");
   });
   it("should render PictureIcon", () => {
@@ -23,7 +23,7 @@ describe("IconButton component tests", () => {
     const rendered = screen.getByRole("button");
     expect(rendered).toBeTruthy();
     expect(rendered).toContainHTML("img");
-    const child = screen.getByRole("button").firstElementChild;
+    const child = screen.getByRole("button").firstChild;
     expect(child).toHaveAttribute("src", "imageIcon.png");
     expect(child).toHaveAttribute("alt", "imageIcon not found");
   });
