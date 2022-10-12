@@ -7,6 +7,12 @@ export default {
   title: "Composing-Components/Header",
   component: Header,
   argTypes: {},
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/3Q1HTCalD0lJnNvcMoEw1x/Mealdrop?node-id=1906%3A3469',
+    }
+  }
 };
 const Template = (args) => <Header {...args}/>;
 export const header = Template.bind({});
